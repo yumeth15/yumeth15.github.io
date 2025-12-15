@@ -1,0 +1,54 @@
+/* Reveals: fade&slide on scroll */
+.reveal{
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 600ms ease, transform 600ms ease;
+  will-change: opacity, transform;
+}
+.reveal.in-view{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Button pulse on reveal */
+.btn.reveal.in-view{
+  animation: btnPulse 1.6s ease-in-out 0s 1;
+}
+@keyframes btnPulse{
+  0% { transform: scale(1); }
+  50%{ transform: scale(1.03); }
+  100%{ transform: scale(1); }
+}
+
+/* Skill bars stagger */
+.skillsBars .skillBar{
+  opacity: 0;
+  transform: translateY(28px) scale(0.98);
+  transition: opacity 520ms ease, transform 520ms ease;
+}
+.skillsBars .skillBar.in-view{
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+.skillsBars .skillBar:nth-child(1){ transition-delay: 0ms; }
+.skillsBars .skillBar:nth-child(2){ transition-delay: 80ms; }
+.skillsBars .skillBar:nth-child(3){ transition-delay: 160ms; }
+.skillsBars .skillBar:nth-child(4){ transition-delay: 240ms; }
+
+/* hover for skill cards */
+.skillBar:hover{
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+}
+
+/* subtle bg zoom for intro background */
+.bg{
+  transition: transform 8s ease;
+}
+.bg.in-view{
+  transform: scale(1.05);
+}
+
+/* Nav logo hover */
+.logo{ transition: transform 240ms ease; }
+.logo:hover{ transform: scale(1.06); }
