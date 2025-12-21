@@ -6,7 +6,7 @@
   overflow: hidden;
   background: linear-gradient(180deg, #0a0a0f 0%, #12121a 100%);
   margin: 0;
-  padding: 150px 0 0;  /* space for fixed navbar */
+  padding: 80px 0 0;   /* normal space for laptop/desktop */
 }
 
 .introContainer {
@@ -85,7 +85,7 @@
   opacity: 0;
   animation: fadeUp 0.8s ease forwards;
   animation-delay: 0.2s;
-  padding: 200px;
+  padding: 0;              /* removed 5% padding */
 }
 
 .heroTag span {
@@ -230,7 +230,7 @@
 
 /* make anchor scrolling stop below fixed navbar */
 section {
-  scroll-margin-top: 150px;
+  scroll-margin-top: 80px;
 }
 
 /* Tablet and small laptop */
@@ -269,6 +269,14 @@ section {
 
 /* Phone sizes */
 @media (max-width: 768px) {
+  #intro {
+    padding-top: 130px;        /* extra space only on mobile */
+  }
+
+  section {
+    scroll-margin-top: 130px;  /* match mobile navbar height */
+  }
+
   .introContainer {
     padding: 0 1rem;
   }
